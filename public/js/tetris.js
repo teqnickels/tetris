@@ -1,12 +1,11 @@
-
-
+$(function() {
 	var canvas = document.getElementsByClassName('board')[0];
 	var ctx = canvas.getContext("2d");
 	var linecount = document.getElementsByClassName('lines')[0];
 	var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
-	var width = 10;
+	var width = 12;
 	var height = 20;
-	var tilesz = 24;
+	var tilesz = 26;
 	canvas.width = width * tilesz;
 	canvas.height = height * tilesz;
 
@@ -18,10 +17,10 @@
 		}
 	}
 
-	function drawSquare(x, y) {
+	function drawSquare(ctx, x, y) {
 		ctx.fillRect(x * tilesz, y * tilesz, tilesz, tilesz);
 		var ss = ctx.strokeStyle;
-		ctx.strokeStyle = "#555";
+		ctx.strokeStyle = "#ED0E7D";
 		ctx.strokeRect(x * tilesz, y * tilesz, tilesz, tilesz);
 		ctx.strokeStyle = "#888";
 		// ctx.strokeRect(x * tilesz + 3*tilesz/8, y * tilesz + 3*tilesz/8, tilesz/4, tilesz/4);
@@ -38,11 +37,25 @@
 		[Z, "red"]
 	];
 
-	function newPiece() {
+	function randomPiece(){
 		var p = pieces[parseInt(Math.random() * pieces.length, 10)];
 		return new Piece(p[0], p[1]);
 	}
 
+	var pieceOnDeck = null;
+
+	function newPiece() {
+		var piece = pieceOnDeck || randomPiece();
+		pieceOnDeck = randomPiece();
+		drawOnDeck();
+		return piece;
+	}
+
+	function drawOnDeck(){
+		var onDeckCanvas = document.getElementsByClassName("tetron-next-piece")[0]
+		var ctx = onDeckCanvas.getContext("2d");
+		pieceOnDeck.draw(ctx)
+	}
 
 	function Piece(patterns, color) {
 		this.pattern = patterns[0];
@@ -55,6 +68,8 @@
 		this.y = -2;
 	}
 
+
+
 	Piece.prototype.rotate = function() {
 		var nudge = 0;
 		var nextpat = this.patterns[(this.patterni + 1) % this.patterns.length];
@@ -64,16 +79,17 @@
 		}
 
 		if (!this._collides(nudge, 0, nextpat)) {
-			this.undraw();
+			this.undraw(ctx);
 			this.x += nudge;
 			this.patterni = (this.patterni + 1) % this.patterns.length;
 			this.pattern = this.patterns[this.patterni];
-			this.draw();
+			this.draw(ctx);
 		}
 	};
 
 	var WALL = 1;
 	var BLOCK = 2;
+
 	Piece.prototype._collides = function(dx, dy, pat) {
 		for (var ix = 0; ix < pat.length; ix++) {
 			for (var iy = 0; iy < pat.length; iy++) {
@@ -103,30 +119,31 @@
 			this.lock();
 			piece = newPiece();
 		} else {
-			this.undraw();
+			this.undraw(ctx);
 			this.y++;
-			this.draw();
+			this.draw(ctx);
 		}
 	};
 
 	Piece.prototype.moveRight = function() {
 		if (!this._collides(1, 0, this.pattern)) {
-			this.undraw();
+			this.undraw(ctx);
 			this.x++;
-			this.draw();
+			this.draw(ctx);
 		}
 	};
 
 	Piece.prototype.moveLeft = function() {
 		if (!this._collides(-1, 0, this.pattern)) {
-			this.undraw();
+			this.undraw(ctx);
 			this.x--;
-			this.draw();
+			this.draw(ctx);
 		}
 	};
 
 	var lines = 0;
 	var done = false;
+
 	Piece.prototype.lock = function() {
 		for (var ix = 0; ix < this.pattern.length; ix++) {
 			for (var iy = 0; iy < this.pattern.length; iy++) {
@@ -170,7 +187,7 @@
 		}
 	};
 
-	Piece.prototype._fill = function(color) {
+	Piece.prototype._fill = function(ctx, color) {
 		var fs = ctx.fillStyle;
 		ctx.fillStyle = color;
 		var x = this.x;
@@ -178,7 +195,7 @@
 		for (var ix = 0; ix < this.pattern.length; ix++) {
 			for (var iy = 0; iy < this.pattern.length; iy++) {
 				if (this.pattern[ix][iy]) {
-					drawSquare(x + ix, y + iy);
+					drawSquare(ctx, x + ix, y + iy);
 				}
 			}
 		}
@@ -186,31 +203,17 @@
 	};
 
 	Piece.prototype.undraw = function(ctx) {
-		this._fill(clear);
+		this._fill(ctx, clear);
 	};
 
 	Piece.prototype.draw = function(ctx) {
-		this._fill(this.color);
+		this._fill(ctx, this.color);
 	};
 
 	var piece = null;
 
 	var dropStart = Date.now();
 	var downI = {};
-
-	// document.body.addEventListener("keydown", function (e) {
-	// 	if (downI[e.keyCode] !== null) {
-	// 		clearInterval(downI[e.keyCode]);
-	// 	}
-	// 	key(e.keyCode);
-	// 	downI[e.keyCode] = setInterval(key.bind(this, e.keyCode), 200);
-	// }, false);
-	// document.body.addEventListener("keyup", function (e) {
-	// 	if (downI[e.keyCode] !== null) {
-	// 		clearInterval(downI[e.keyCode]);
-	// 	}
-	// 	downI[e.keyCode] = null;
-	// }, false);
 
 	$('body').keydown(function(event) {
 		console.log(event.which);
@@ -236,11 +239,12 @@
 		for (var y = 0; y < height; y++) {
 			for (var x = 0; x < width; x++) {
 				ctx.fillStyle = board[y][x] || clear;
-				drawSquare(x, y, tilesz, tilesz);
+				drawSquare(ctx, x, y);
 			}
 		}
 		ctx.fillStyle = fs;
 	}
+
 
 	function main() {
 		var now = Date.now();
@@ -260,3 +264,10 @@
 	drawBoard();
 	linecount.textContent = "Lines: 0";
 	main();
+
+	$('.start').click(function() {
+		location.reload();
+	});
+
+
+});

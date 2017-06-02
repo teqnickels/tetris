@@ -1,19 +1,94 @@
-html {
-   background: #F7F7F7;
- }
+
+body {
+  background-image: url("../images/neon-background.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 .board {
   margin: 0 auto;
   display: block;
   border: 2px solid black;
-  border-bottom: 5px solid green;
-  background: white;
+  border-bottom: 5px solid #ED0E7D;
+  background: #000;
+
 }
+
 .lines {
   display: block;
   width: 240px;
   margin: 0 auto;
   margin-top: 2em;
-  color: #444;
-  font-size: 1.5em;
+  color: #FFF;
+  font-size: 3em;
+  color: #2AFF00;
+  font-family: 'VT323', monospace;
+
 }
+.levels {
+  display: block;
+  width: 240px;
+  margin: 0 auto;
+  margin-top: 2em;
+  color: #FFF;
+  font-size: 3em;
+  color: #2AFF00;
+  font-family: 'VT323', monospace;
+}
+
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 97vh;
+  justify-content: center;
+
+}
+
+.flex-item-center {
+  width: 2400px;
+  align-items: center;
+  align-self: center;
+}
+
+.flex-item {
+  width: 1000px;
+  background-color: #000;
+  opacity: 0.8;
+
+}
+img {
+  /*margin: auto;*/
+  padding: 10px;
+  max-width:300;
+  max-height:300px;
+}
+
+button {
+  background-color: #ED0E7D;
+  border-radius: 10%;
+  border-color: #2AFF00;
+  color: #2AFF00;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-family: 'VT323', monospace;
+  display: inline-block;
+
+}
+
+.tetron-next-piece{
+  background-color: white;
+  width:200px;
+  height: 200px; 
+
+}
+/*div {
+  outline: solid #FFF thick
+}*/
