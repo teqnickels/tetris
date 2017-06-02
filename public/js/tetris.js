@@ -197,47 +197,39 @@
 
 	var dropStart = Date.now();
 	var downI = {};
-	document.body.addEventListener("keydown", function (e) {
-		if (downI[e.keyCode] !== null) {
-			clearInterval(downI[e.keyCode]);
-		}
-		key(e.keyCode);
-		downI[e.keyCode] = setInterval(key.bind(this, e.keyCode), 200);
-	}, false);
-	document.body.addEventListener("keyup", function (e) {
-		if (downI[e.keyCode] !== null) {
-			clearInterval(downI[e.keyCode]);
-		}
-		downI[e.keyCode] = null;
-	}, false);
 
- // $(document).ready(function() {
-	  $(document).keydown(function() {
-	    if(done) {
-		    if(event.keyCode == 38){
-		      piece.rotate()
-		      dropStart = Date.now()
-		    }
-		    if(event.keyCode == 40){
-		      piece.down()
-		    }
-		    if(event.keyCode == 37){
-		      piece.moveLeft()
-		      dropStart = Date.now()
-		    }
-		    if(event.keyCode == 39){
-		      piece.moveRight()
-		      dropStart = Date.now()
-		    }
+	// document.body.addEventListener("keydown", function (e) {
+	// 	if (downI[e.keyCode] !== null) {
+	// 		clearInterval(downI[e.keyCode]);
+	// 	}
+	// 	key(e.keyCode);
+	// 	downI[e.keyCode] = setInterval(key.bind(this, e.keyCode), 200);
+	// }, false);
+	// document.body.addEventListener("keyup", function (e) {
+	// 	if (downI[e.keyCode] !== null) {
+	// 		clearInterval(downI[e.keyCode]);
+	// 	}
+	// 	downI[e.keyCode] = null;
+	// }, false);
 
-	  	}
-		// })
-
-	  $('.newGame').click(function(){
-	    location.reload(true)
-	  })
-	})
-
+	$('body').keydown(function(event) {
+		console.log(event.which);
+	    if(event.which == 38){
+	      piece.rotate()
+	      dropStart = Date.now()
+	    }
+	    if(event.which == 40){
+	      piece.down()
+	    }
+	    if(event.which == 37){
+	      piece.moveLeft()
+	      dropStart = Date.now()
+	    }
+	    if(event.which == 39){
+	      piece.moveRight()
+	      dropStart = Date.now()
+	    }
+		})
 
 	function drawBoard() {
 		var fs = ctx.fillStyle;
