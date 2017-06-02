@@ -2,9 +2,9 @@
 ## General
 
  - [x] Artifact produced is a fork of the browser-games repo.
- - [ ] Variables, functions, files, etc. have appropriate and meaningful names.
+ - [x] Variables, functions, files, etc. have appropriate and meaningful names.
  - [x] HTML, CSS, and JS files are well formatted with proper spacing and indentation.
- - [ ]  There is a clear separation of game logic code from view/rendering code.
+ - [x]  There is a clear separation of game logic code from view/rendering code.
  - [x] All major features are added via pull requests with a clear description and concise commit messages.
  - [x] The artifact produced is properly licensed, preferably with the MIT license.
 
