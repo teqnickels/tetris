@@ -3,15 +3,38 @@
 	<head>
 		<meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/tetris.css">
-		<title>Tetris</title>
+		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+		<title>Tetron</title>
 	</head>
 	<body>
-		<span class="lines">Lines: 0</span>
-		<canvas class="board"></canvas>
+		<div class="flex-container">
+
+			<div class="flex-item">
+				<div class="logo">
+					<img src="images/tetron.png">
+					<button class="start">START NEW GAME</button>
+					<!-- <button class="pause">PAUSE</button> -->
+				</div>
+			</div>
+
+		  <div class="flex-item-center">
+				<canvas class="board"></canvas>
+			</div>
+
+			<div class="flex-item">
+				<p class="lines">LINES: 0</p>
+				<p class="levels">LEVEL: 0</p>
+				<canvas class="tetron-next-piece">
+				</canvas>
+			</div>
+
+		</div>
+
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		crossorigin="anonymous"></script>
 		<script src="js/tetrominoes.js"></script>
 		<script src="js/tetris.js"></script>
+
 	</body>
 </html>
