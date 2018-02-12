@@ -1,4 +1,18 @@
 # Browser Games - Tetris
+
+## How To Play
+
+In your terminal:
+- Clone this repository
+- run the command: 
+  `npm install`
+  `npm start`
+- In your browser go to: http://127.0.0.1:4321/tetris.html
+- Use the <- & -> arrow keys to move pieces from left to right
+- The up arrow rotates the pieces
+
+
+
 ## General
 
  - [x] Artifact produced is a fork of the browser-games repo.
