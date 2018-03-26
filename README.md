@@ -1,7 +1,15 @@
-# Browser Games - Tetris
+# Browser Games - Tetron
+
+## Project Overview
+
+Tetron is a learning project that allows a user to play tetris in their browser. My goal was to learn about: 
+  - JavaScript object oriented programming
+  - Canvas
+ 
+## Installation Instructions
+
 
 ## How To Play
-
 In your terminal:
 - Clone this repository
 - run the command: 
