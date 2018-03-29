@@ -2,7 +2,11 @@
 
 ## Project Overview
 
-Tetron is a learning project that allows a user to play tetris in their browser. This project was an assignment from the Learner's Guild and the specs are derived from the assignment. The original specs can be found below in this document. My goal was to learn about: 
+Tetron is a learning project that allows a user to play tetris in their browser. This project was an assignment from the Learner's Guild and the specs are derived from the assignment. 
+
+![Image of game](https://github.com/teqnickels/tetris/blob/master/Screen%20Shot%202018-03-29%20at%203.58.53%20PM.png)
+
+The original specs can be found below in this document. My goal was to learn about: 
   - JavaScript object oriented programming
   - Canvas
  
