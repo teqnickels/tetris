@@ -6,6 +6,7 @@ $(function() {
 	var width = 12;
 	var height = 20;
 	var tilesz = 26;
+
 	canvas.width = width * tilesz;
 	canvas.height = height * tilesz;
 
@@ -61,14 +62,10 @@ $(function() {
 		this.pattern = patterns[0];
 		this.patterns = patterns;
 		this.patterni = 0;
-
 		this.color = color;
-
 		this.x = width/2-parseInt(Math.ceil(this.pattern.length/2), 10);
-		this.y = -2;
+		this.y = 0;
 	}
-
-
 
 	Piece.prototype.rotate = function() {
 		var nudge = 0;
@@ -96,7 +93,6 @@ $(function() {
 				if (!pat[ix][iy]) {
 					continue;
 				}
-
 				var x = this.x + ix + dx;
 				var y = this.y + iy + dy;
 				if (y >= height || x < 0 || x >= width) {
@@ -110,7 +106,6 @@ $(function() {
 				}
 			}
 		}
-
 		return 0;
 	};
 
@@ -144,6 +139,7 @@ $(function() {
 	var lines = 0;
 	var done = false;
 
+	//Read to understand this portion, this feature doesn't work
 	Piece.prototype.lock = function() {
 		for (var ix = 0; ix < this.pattern.length; ix++) {
 			for (var iy = 0; iy < this.pattern.length; iy++) {
@@ -160,7 +156,6 @@ $(function() {
 				board[this.y + iy][this.x + ix] = this.color;
 			}
 		}
-
 		var nlines = 0;
 		for (var y = 0; y < height; y++) {
 			var line = true;
@@ -179,7 +174,6 @@ $(function() {
 				nlines++;
 			}
 		}
-
 		if (nlines > 0) {
 			lines += nlines;
 			drawBoard();
@@ -192,6 +186,7 @@ $(function() {
 		ctx.fillStyle = color;
 		var x = this.x;
 		var y = this.y;
+		console.log('X and Y', x, y);
 		for (var ix = 0; ix < this.pattern.length; ix++) {
 			for (var iy = 0; iy < this.pattern.length; iy++) {
 				if (this.pattern[ix][iy]) {
@@ -211,12 +206,10 @@ $(function() {
 	};
 
 	var piece = null;
-
 	var dropStart = Date.now();
 	var downI = {};
 
 	$('body').keydown(function(event) {
-		console.log(event.which);
 	    if(event.which == 38){
 	      piece.rotate()
 	      dropStart = Date.now()
@@ -245,7 +238,7 @@ $(function() {
 		ctx.fillStyle = fs;
 	}
 
-
+//Look at this for drop down issues when board is filled
 	function main() {
 		var now = Date.now();
 		var delta = now - dropStart;
@@ -269,5 +262,40 @@ $(function() {
 		location.reload();
 	});
 
+	
+	const pauseButton = document.getElementsByClassName('pause')[0]
+	pauseButton.addEventListener('click', pauseGame)
+
+	// Get the modal
+	var modal = document.getElementById('myModal');
+	
+	// Get the button that opens the modal
+	// var btn = document.getElementById("myBtn");
+	
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	
+	// When the user clicks the button, open the modal
+	// btn.onclick = function () {
+		// 		modal.style.display = "block";
+		// }
+		
+		function pauseGame() {
+			console.log('OPENING THE MODAL!')
+			let gameState = ctx.save()
+			modal.style.display = "block";
+		}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function () {
+			modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function (event) {
+			if (event.target == modal) {
+					modal.style.display = "none";
+			}
+	} 
 
 });
