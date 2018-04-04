@@ -5,7 +5,7 @@ $(function() {
 	var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
 	var width = 12;
 	var height = 20;
-	var tilesz = 26;
+	var tilesz = 45;
 
 	canvas.width = width * tilesz;
 	canvas.height = height * tilesz;
@@ -38,7 +38,7 @@ $(function() {
 		[Z, "red"]
 	];
 
-	function randomPiece(){
+	function randomPiece() {
 		var p = pieces[parseInt(Math.random() * pieces.length, 10)];
 		return new Piece(p[0], p[1]);
 	}
@@ -51,11 +51,19 @@ $(function() {
 		drawOnDeck();
 		return piece;
 	}
-
-	function drawOnDeck(){
+	
+	function clearDeck() {
+		var onDeckCanvas = document.getElementsByClassName("tetron-next-piece")[0]
+		var ctx = onDeckCanvas.getContext("2d");
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+	}
+	
+	function drawOnDeck() {
+		clearDeck()
 		var onDeckCanvas = document.getElementsByClassName("tetron-next-piece")[0]
 		var ctx = onDeckCanvas.getContext("2d");
 		pieceOnDeck.draw(ctx)
+
 	}
 
 	function Piece(patterns, color) {
@@ -144,10 +152,12 @@ $(function() {
 		for (var ix = 0; ix < this.pattern.length; ix++) {
 			for (var iy = 0; iy < this.pattern.length; iy++) {
 				if (!this.pattern[ix][iy]) {
+					console.log('this.pattern[ix][iy]', this.pattern[ix][iy])
 					continue;
 				}
-
-				if (this.y + iy < 0) {
+				console.log('this.y', this.y, 'iy', iy)
+				console.log('this.y + iy', this.y + iy ," <---- This number has to be less than or equal to 0 to lose game")
+				if (this.y + iy <= 0) {
 					// Game ends!
 					alert("You're done!");
 					done = true;
@@ -186,7 +196,9 @@ $(function() {
 		ctx.fillStyle = color;
 		var x = this.x;
 		var y = this.y;
-		console.log('X and Y', x, y);
+
+		console.log('X is: ', x, 'Y is: ', y);
+
 		for (var ix = 0; ix < this.pattern.length; ix++) {
 			for (var iy = 0; iy < this.pattern.length; iy++) {
 				if (this.pattern[ix][iy]) {
@@ -241,9 +253,9 @@ $(function() {
 //Look at this for drop down issues when board is filled
 	function main() {
 		var now = Date.now();
-		var delta = now - dropStart;
+		var delta = now - dropStart; //elapsed time since the game last updated (previous frame)
 
-		if (delta > 1000) {
+		if (delta > 1000) { //if delta timing is greater than 1 second
 			piece.down();
 			dropStart = now;
 		}
@@ -282,8 +294,9 @@ $(function() {
 		
 		function pauseGame() {
 			console.log('OPENING THE MODAL!')
-			let gameState = ctx.save()
+			// let gameState = ctx.save()
 			modal.style.display = "block";
+			console.log('THIS IS THE GAME STATE', gameState)
 		}
 
 	// When the user clicks on <span> (x), close the modal
