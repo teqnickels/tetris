@@ -4,11 +4,13 @@ $(function() {
 	var linecount = document.getElementsByClassName('lines')[0];
 	var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
 	var width = 12;
-	var height = 20;
-	var tilesz = 45;
+	var height = 28;
+	var tilesz = 30;
 
 	canvas.width = width * tilesz;
-	canvas.height = height * tilesz;
+	canvas.height = height * tilesz; //achieves getting extra canvas, except that extra canvas is on bottom
+
+	console.log(ctx)
 
 	var board = [];
 	for (var r = 0; r < height; r++) {
@@ -19,6 +21,9 @@ $(function() {
 	}
 
 	function drawSquare(ctx, x, y) {
+		console.log("Y is ", y, "when we draw the squares")
+		console.log("tilesz is ", tilesz, "when we draw the squares")
+
 		ctx.fillRect(x * tilesz, y * tilesz, tilesz, tilesz);
 		var ss = ctx.strokeStyle;
 		ctx.strokeStyle = "#ED0E7D";
@@ -38,13 +43,16 @@ $(function() {
 		[Z, "red"]
 	];
 
+	//Which piece to draw
 	function randomPiece() {
 		var p = pieces[parseInt(Math.random() * pieces.length, 10)];
+		//shape and color
 		return new Piece(p[0], p[1]);
 	}
 
 	var pieceOnDeck = null;
-
+	// piece is either going to equal the piece on deck, if no piece on deck, then 
+	// piece is randomPiece()
 	function newPiece() {
 		var piece = pieceOnDeck || randomPiece();
 		pieceOnDeck = randomPiece();
@@ -52,17 +60,18 @@ $(function() {
 		return piece;
 	}
 	
+	//Clearing the piece on deck before adding the next piece on deck
 	function clearDeck() {
 		var onDeckCanvas = document.getElementsByClassName("tetron-next-piece")[0]
 		var ctx = onDeckCanvas.getContext("2d");
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 	}
-	
+	//Add the next incoming piece to the piece on deck
 	function drawOnDeck() {
 		clearDeck()
 		var onDeckCanvas = document.getElementsByClassName("tetron-next-piece")[0]
 		var ctx = onDeckCanvas.getContext("2d");
-		pieceOnDeck.draw(ctx)
+		pieceOnDeck.draw(ctx, 2)
 
 	}
 
@@ -72,7 +81,7 @@ $(function() {
 		this.patterni = 0;
 		this.color = color;
 		this.x = width/2-parseInt(Math.ceil(this.pattern.length/2), 10);
-		this.y = 0;
+		this.y = -2;
 	}
 
 	Piece.prototype.rotate = function() {
@@ -191,11 +200,11 @@ $(function() {
 		}
 	};
 
-	Piece.prototype._fill = function(ctx, color) {
+	Piece.prototype._fill = function(ctx, color, yOffset = 0 ) {
 		var fs = ctx.fillStyle;
 		ctx.fillStyle = color;
 		var x = this.x;
-		var y = this.y;
+		var y = this.y + yOffset;
 
 		console.log('X is: ', x, 'Y is: ', y);
 
@@ -213,8 +222,8 @@ $(function() {
 		this._fill(ctx, clear);
 	};
 
-	Piece.prototype.draw = function(ctx) {
-		this._fill(ctx, this.color);
+	Piece.prototype.draw = function(ctx, yOffset) {
+		this._fill(ctx, this.color, yOffset);
 	};
 
 	var piece = null;
@@ -250,7 +259,7 @@ $(function() {
 		ctx.fillStyle = fs;
 	}
 
-//Look at this for drop down issues when board is filled
+//This handles the timing of the drop
 	function main() {
 		var now = Date.now();
 		var delta = now - dropStart; //elapsed time since the game last updated (previous frame)
