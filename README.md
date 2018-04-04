@@ -48,7 +48,6 @@ MIT License
 ## Known Bugs
 
 - Currently, users are not able to pause a game
-- When pieces pile up to the top of the grid, users don't immediately lose. The pieces continue to pile up beyond the grid. 
 - There are no levels.
 - Pieces do not speed up with the user's success.
 
