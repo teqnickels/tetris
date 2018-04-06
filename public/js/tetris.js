@@ -2,15 +2,17 @@ $(function() {
 	var canvas = document.getElementsByClassName('board')[0];
 	var ctx = canvas.getContext("2d");
 	var linecount = document.getElementsByClassName('lines')[0];
+	var linePoints = document.getElementsByClassName('points')[0];
+	var level = document.getElementsByClassName('levels')[0];
 	var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
 	var width = 12;
 	var height = 28;
 	var tilesz = 30;
+	var playerLevel = 0;
 
 	canvas.width = width * tilesz;
 	canvas.height = height * tilesz; //achieves getting extra canvas, except that extra canvas is on bottom
 
-	console.log(ctx)
 
 	var board = [];
 	for (var r = 0; r < height; r++) {
@@ -21,9 +23,6 @@ $(function() {
 	}
 
 	function drawSquare(ctx, x, y) {
-		console.log("Y is ", y, "when we draw the squares")
-		console.log("tilesz is ", tilesz, "when we draw the squares")
-
 		ctx.fillRect(x * tilesz, y * tilesz, tilesz, tilesz);
 		var ss = ctx.strokeStyle;
 		ctx.strokeStyle = "#ED0E7D";
@@ -156,16 +155,13 @@ $(function() {
 	var lines = 0;
 	var done = false;
 
-	//Read to understand this portion, this feature doesn't work
 	Piece.prototype.lock = function() {
 		for (var ix = 0; ix < this.pattern.length; ix++) {
 			for (var iy = 0; iy < this.pattern.length; iy++) {
 				if (!this.pattern[ix][iy]) {
-					console.log('this.pattern[ix][iy]', this.pattern[ix][iy])
 					continue;
 				}
-				console.log('this.y', this.y, 'iy', iy)
-				console.log('this.y + iy', this.y + iy ," <---- This number has to be less than or equal to 0 to lose game")
+
 				if (this.y + iy <= 0) {
 					// Game ends!
 					alert("You're done!");
@@ -191,13 +187,21 @@ $(function() {
 					board[0][x] = "";
 				}
 				nlines++;
+				console.log("LINES", nlines)
 			}
 		}
+		
+		let previousLines = linePoints.textContent
+		let currentLines;
+		var countUntilLevelUp = 5;
 		if (nlines > 0) {
+			previousLines = lines;
 			lines += nlines;
+			level.textContent = "Level: " + getLevel(lines)
 			drawBoard();
 			linecount.textContent = "Lines: " + lines;
-		}
+		 }
+
 	};
 
 	Piece.prototype._fill = function(ctx, color, yOffset = 0 ) {
@@ -205,8 +209,6 @@ $(function() {
 		ctx.fillStyle = color;
 		var x = this.x;
 		var y = this.y + yOffset;
-
-		console.log('X is: ', x, 'Y is: ', y);
 
 		for (var ix = 0; ix < this.pattern.length; ix++) {
 			for (var iy = 0; iy < this.pattern.length; iy++) {
@@ -259,12 +261,22 @@ $(function() {
 		ctx.fillStyle = fs;
 	}
 
-//This handles the timing of the drop
-	function main() {
-		var now = Date.now();
-		var delta = now - dropStart; //elapsed time since the game last updated (previous frame)
+	function getLevel(numLines) {
+	 return	parseInt(numLines/2)
+	}
 
-		if (delta > 1000) { //if delta timing is greater than 1 second
+	function main() {
+		var shortenTime = 0; 
+		var now = Date.now();
+		var delta = now - dropStart;
+		var playerLevel = getLevel(lines)
+		if(playerLevel > 0) {
+			shortenTime = 50 * playerLevel; 
+			if(delta > (1000 - shortenTime)) {
+				piece.down();
+				dropStart = now;
+			}
+		} else if (delta > 1000) { 
 			piece.down();
 			dropStart = now;
 		}
