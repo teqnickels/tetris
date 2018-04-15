@@ -23,6 +23,7 @@ In your terminal:
     - In your browser go to: http://127.0.0.1:4321/tetris.html
     - Use the <- & -> arrow keys to move pieces from left to right
     - The up arrow rotates the pieces
+    - Typing 'p' will pause the game
    
 ## File List
 
