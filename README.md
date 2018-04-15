@@ -47,13 +47,11 @@ MIT License
 
 ## Known Bugs
 
-- Currently, users are not able to pause a game
-- There are no levels.
-- Pieces do not speed up with the user's success.
+- Currently, users are not able to pause a game using the pause button. (User's can pause the game by typing 'p'). 
+- In early levels of the game, user's can slow the dropping of pieces by holding down the up arrow. 
 
 ## Changelog
-
-_Coming Soon_
+April 15th 2018 - Added keyboard pause feature. Users can type 'p' to pause game 
 
 ## News
 _Coming Soon_ 
