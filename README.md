@@ -49,6 +49,7 @@ MIT License
 
 - Currently, users are not able to pause a game using the pause button. (User's can pause the game by typing 'p'). 
 - In early levels of the game, user's can slow the dropping of pieces by holding down the up arrow. 
+- Preview of next piece is slightly distorted. 
 
 ## Changelog
 April 15th 2018 - Added keyboard pause feature. Users can type 'p' to pause game 
