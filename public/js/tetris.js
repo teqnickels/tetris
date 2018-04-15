@@ -7,7 +7,7 @@ $(function() {
 	var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
 	var width = 12;
 	var height = 28;
-	var tilesz = 30;
+	var tilesz = 20;
 	var playerLevel = 0;
 
 	canvas.width = width * tilesz;
@@ -265,6 +265,25 @@ $(function() {
 	 return	parseInt(numLines/2)
 	}
 
+
+	window.addEventListener('keydown', function (e) {
+		var key = e.keyCode;
+		if (key === 80) {
+    	togglePause();
+		}
+	});
+
+	let paused; 
+
+	function togglePause() {
+			if(!paused) {
+					paused = true;
+			} else if(paused) {
+					paused = false;
+					requestAnimationFrame(main);
+			}
+	}
+
 	function main() {
 		var shortenTime = 0; 
 		var now = Date.now();
@@ -281,9 +300,13 @@ $(function() {
 			dropStart = now;
 		}
 
-		if (!done) {
-			requestAnimationFrame(main);
+		if(!done && !paused) {
+			var myRequest = requestAnimationFrame(main);
 		}
+
+		if(paused) {
+			cancelAnimationFrame(myRequest);
+		} 
 	}
 
 	piece = newPiece();
