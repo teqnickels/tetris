@@ -131,11 +131,11 @@ button {
 /* Modal Content */
 
 .modal-content {
-  background-color: #fefefe;
+  /* background-color: #fefefe66; */
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  /* border: 1px solid #888; */
+  width: 30%;
 }
 
 /* The Close Button */
@@ -149,7 +149,14 @@ button {
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: #2AFF00;
   text-decoration: none;
   cursor: pointer;
+}
+
+.paused {
+  margin: auto;
+  font-family: 'VT323', monospace;
+  font-size: 155px;
+  color: #2AFF00;
 }
