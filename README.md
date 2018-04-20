@@ -23,7 +23,7 @@ In your terminal:
     - In your browser go to: http://127.0.0.1:4321/tetris.html
     - Use the <- & -> arrow keys to move pieces from left to right
     - The up arrow rotates the pieces
-    - Typing 'p' will pause the game
+    - Typing 'p' will pause/unpause the game. Clicking Pause/Resume Game buttons will pause/unpause/'x' game. 
    
 ## File List
 
@@ -48,12 +48,12 @@ MIT License
 
 ## Known Bugs
 
-- Currently, users are not able to pause a game using the pause button. (User's can pause the game by typing 'p'). 
 - In early levels of the game, user's can slow the dropping of pieces by holding down the up arrow. 
 - Preview of next piece is slightly distorted. 
 
 ## Changelog
 April 15th 2018 - Added keyboard pause feature. Users can type 'p' to pause game 
+April 19th 2018 - Added pause modal
 
 ## News
 _Coming Soon_ 
