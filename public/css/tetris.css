@@ -1,12 +1,20 @@
 
 body {
-  background-image: url("../images/neon-background.jpg");
-  background-color: #000;
+  /* background-image: url("../images/neon-background.jpg"); */
+  /* background-color: #000; */
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .board {
@@ -15,7 +23,8 @@ body {
   border: 2px solid black;
   border-bottom: 5px solid #ED0E7D;
   background: #000;
-
+  position: relative;
+  z-index: 999;
 }
 
 .lines {
@@ -115,6 +124,8 @@ button {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
+    z-index: 1000;
+
 }
 
 /* Modal Content */

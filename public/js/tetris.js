@@ -10,6 +10,9 @@ $(function() {
 	var tilesz = 20;
 	var playerLevel = 0;
 
+	var vid = document.getElementsByClassName("myVideo")[0];
+	vid.playbackRate = 2.0;
+
 	canvas.width = width * tilesz;
 	canvas.height = height * tilesz; //achieves getting extra canvas, except that extra canvas is on bottom
 
@@ -278,8 +281,10 @@ $(function() {
 	function togglePause() {
 			if(!paused) {
 					paused = true;
+					displayPausedModal()
 			} else if(paused) {
 					paused = false;
+					closePauseModal()
 					requestAnimationFrame(main);
 			}
 	}
@@ -299,11 +304,9 @@ $(function() {
 			piece.down();
 			dropStart = now;
 		}
-
 		if(!done && !paused) {
 			var myRequest = requestAnimationFrame(main);
 		}
-
 		if(paused) {
 			cancelAnimationFrame(myRequest);
 		} 
@@ -320,7 +323,8 @@ $(function() {
 
 	
 	const pauseButton = document.getElementsByClassName('pause')[0]
-	pauseButton.addEventListener('click', pauseGame)
+	pauseButton.addEventListener('click', togglePause)
+
 
 	// Get the modal
 	var modal = document.getElementById('myModal');
@@ -336,23 +340,34 @@ $(function() {
 		// 		modal.style.display = "block";
 		// }
 		
-		function pauseGame() {
-			console.log('OPENING THE MODAL!')
-			// let gameState = ctx.save()
+		function displayPausedModal() {
 			modal.style.display = "block";
-			console.log('THIS IS THE GAME STATE', gameState)
 		}
 
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function () {
-			modal.style.display = "none";
-	}
 
+		var resumeGame = document.getElementsByClassName("resume")[0]
+		resumeGame.addEventListener('click', resumeAndUnpause)
+
+		function resumeAndUnpause() {
+			console.log("resuming game")
+			togglePause()
+		}
+	// When the user clicks on <span> (x), close the modal
+	span.addEventListener('click', resumeAndUnpause)
+	
+
+	// WHEN USE CLOSES MODAL BY CLICKING 'X', UNPAUSE
+	function closePauseModal() {
+		console.log("Closing modal")
+		modal.style.display = "none";
+	}
+ 
 	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function (event) {
-			if (event.target == modal) {
-					modal.style.display = "none";
-			}
-	} 
+	// window.onclick = function (event) {
+	// 		if (event.target == modal) {
+	// 				modal.style.display = "none";
+	// 		}
+	// } 
+
 
 });
