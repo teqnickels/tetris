@@ -94,6 +94,7 @@ button {
 .tetron-next-piece {
   background-color: #272428;
   padding: 50px;
+  width: 100%;
 }
 
 /* The Modal (background) */
