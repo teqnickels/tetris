@@ -159,3 +159,12 @@ button {
   color: #ED0E7D;
   padding-bottom: 0px; 
 }
+
+a:link {
+  color: #2AFF00;
+}
+
+a:hover {
+  color: #ED0E7D;
+}
+
