@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "description": "A collection of games to play in a web browser.",
   "scripts": {
-    "start": "process.env.PORT || http-server ./public -p 4321"
+    "start": "node server.js"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GuildCrafts/browser-games.git"
@@ -20,7 +21,6 @@
   },
   "homepage": "https://github.com/GuildCrafts/browser-games#readme",
   "dependencies": {
-    "dotenv": "^5.0.1",
     "http-server": "^0.9.0"
   }
 }
