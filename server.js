@@ -3,7 +3,7 @@ const path = require('path');
 const port = process.env.PORT || 5000;
 const app = express();
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'tetris.html'));
