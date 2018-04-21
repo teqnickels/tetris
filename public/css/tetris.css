@@ -165,7 +165,8 @@ a:link {
   color: #2AFF00;
 }
 
-a:hover {
+a:hover,
+a:visited {
   color: #ED0E7D;
 }
 
