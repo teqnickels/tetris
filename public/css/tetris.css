@@ -184,7 +184,7 @@ a:visited {
       opacity: 0.8;
     }
 
-    .resume .pause {
+    .resume, .pause {
       background-color: #ED0E7D;
       border-radius: 10%;
       border-color: #2AFF00;
