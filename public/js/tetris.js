@@ -14,9 +14,8 @@ $(function() {
 	vid.playbackRate = 2.0;
 
 	canvas.width = width * tilesz;
-	canvas.height = height * tilesz; //achieves getting extra canvas, except that extra canvas is on bottom
-
-
+	canvas.height = height * tilesz; 
+	
 	var board = [];
 	for (var r = 0; r < height; r++) {
 		board[r] = [];
