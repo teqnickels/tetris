@@ -91,18 +91,12 @@ button {
   margin-left: 75px;
 }
 
-.tetron-next-piece{
-  margin-top: 70px;
-  margin: 30px; 
+.tetron-next-piece {
   background-color: #272428;
   padding: 50px;
-  width: 200px;
-  height: 200px;
-
 }
 
 /* The Modal (background) */
-
 .modal {
   display: none;
   /* Hidden by default */
