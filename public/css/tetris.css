@@ -171,12 +171,13 @@ a:visited {
   color: #ED0E7D;
 }
 
-/* ----------- iPad Pro 12.9" ----------- */
+
+/* ----------- iPad Pro 10.5" ----------- */
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-device-width: 1024px) 
-  and (max-device-width: 1366px)
+  and (min-device-width: 834px) 
+  and (max-device-width: 1112px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .flex-item {
       width: 200px;
@@ -184,7 +185,8 @@ a:visited {
       opacity: 0.8;
     }
 
-    .resume, .pause {
+    .resume,
+    .pause {
       background-color: #ED0E7D;
       border-radius: 10%;
       border-color: #2AFF00;
@@ -204,8 +206,8 @@ a:visited {
 /* Declare the same value for min- and max-width to avoid colliding with desktops */
 /* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
 @media only screen 
-  and (min-device-width: 1024px) 
-  and (max-device-width: 1024px) 
+  and (min-device-width: 834px) 
+  and (max-device-width: 834px) 
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -215,12 +217,13 @@ a:visited {
 /* Declare the same value for min- and max-width to avoid colliding with desktops */
 /* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
 @media only screen 
-  and (min-device-width: 1366px) 
-  and (max-device-width: 1366px) 
+  and (min-device-width: 1112px) 
+  and (max-device-width: 1112px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 2) {
 
 }
+
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
