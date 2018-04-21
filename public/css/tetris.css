@@ -65,7 +65,7 @@ body {
 }
 
 .flex-item {
-  width: 1000px;
+  width: 10%;
   background-color: #000;
   opacity: 0.8;
 
@@ -179,8 +179,8 @@ a:visited {
   and (min-device-width: 834px) 
   and (max-device-width: 1112px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .flex-item {
-      width: 200px;
+    /* .flex-item {
+      width: 300px;
       background-color: #000;
       opacity: 0.8;
     }
@@ -198,7 +198,7 @@ a:visited {
       font-family: 'VT323', monospace;
       display: inline-block;
       margin-left: 75px;
-    }
+    } */
 
 }
 
