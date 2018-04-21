@@ -158,7 +158,8 @@ button {
 .credits {
   color: #ED0E7D;
   margin-bottom: 0px; 
-  text-align: center; 
+  text-align: center;
+  z-index: 1000; 
 }
 
 a:link {
