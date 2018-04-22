@@ -18,35 +18,52 @@ body {
 }
 
 .board {
-  margin: 0 auto;
-  display: block;
+  /* margin: 0; */
+  /* display: block; */
   border: 2px solid black;
   border-bottom: 5px solid #ED0E7D;
   background: #000;
   position: relative;
   z-index: 999;
+  width: 50%; 
 }
 
-.lines {
-  display: block;
-  width: 240px;
-  margin: 0 auto;
-  margin-top: 2em;
-  color: #FFF;
-  font-size: 3em;
-  color: #2AFF00;
-  font-family: 'VT323', monospace;
-
+.center {
+  display: flex; 
+  width: 50%; 
+  margin: 0 auto; 
 }
+
+.lines,
 .levels {
-  display: block;
-  width: 240px;
-  margin: 0 auto;
-  margin-top: 2em;
   color: #FFF;
-  font-size: 3em;
+  font-size: 50px;
   color: #2AFF00;
   font-family: 'VT323', monospace;
+  text-align: center; 
+}
+
+.tetron-next-piece {
+  background-color: #272428;
+}
+
+.flex-item {
+  display: flex;
+  width:30%;
+  flex-direction: column;
+  background-color: #000;
+  opacity: 0.8;
+  align-items: center;
+}
+
+.flex-item-center {
+  /* width: 2400px; */
+  flex-grow: 3;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  flex-direction: column;
+  opacity: 0.8;
 }
 
 .flex-container {
@@ -58,18 +75,6 @@ body {
 
 }
 
-.flex-item-center {
-  width: 2400px;
-  align-items: center;
-  align-self: center;
-}
-
-.flex-item {
-  width: 10%;
-  background-color: #000;
-  opacity: 0.8;
-
-}
 img {
   /*margin: auto;*/
   padding: 10px;
@@ -91,11 +96,6 @@ button {
   margin-left: 75px;
 }
 
-.tetron-next-piece {
-  background-color: #272428;
-  padding: 50px;
-  width: 100%;
-}
 
 /* The Modal (background) */
 .modal {
@@ -172,7 +172,9 @@ a:visited {
   color: #ED0E7D;
 }
 
-
+.small {
+  display: none; 
+}
 /* ----------- iPad Pro 10.5" ----------- */
 
 /* Portrait and Landscape */
@@ -180,27 +182,77 @@ a:visited {
   and (min-device-width: 834px) 
   and (max-device-width: 1112px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    /* .flex-item {
-      width: 300px;
-      background-color: #000;
-      opacity: 0.8;
+
+    .myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      /* min-width: 100vh;
+      min-height: 100vh; */
     }
 
-    .resume,
-    .pause {
-      background-color: #ED0E7D;
-      border-radius: 10%;
-      border-color: #2AFF00;
-      color: #2AFF00;
-      padding: 15px 32px;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 10px;
-      font-family: 'VT323', monospace;
-      display: inline-block;
-      margin-left: 75px;
-    } */
+    .board {
+      /* margin: 0; */
+      /* display: block; */
+      border: 2px solid black;
+      border-bottom: 5px solid #ED0E7D;
+      /* background: #FFF; */
+      position: relative;
+      z-index: 999;
+      width: 75%;
+    }
 
+   .flex-item {
+     display: flex;
+     width: 20%;
+     flex-direction: column;
+     background-color: #000;
+     opacity: 0.8;
+     align-items: center;
+   }
+
+   .tetron-next-piece {
+      background-color: #272428;
+      width: 80%;
+   }
+
+  .lines,
+  .levels {
+    color: #FFF;
+    font-size: 40pt;
+    color: #2AFF00;
+    font-family: 'VT323', monospace;
+    text-align: center;
+  }
+
+  .start,
+  .pause {
+    background-color: #ED0E7D;
+    border-radius: 10%;
+    border-color: #2AFF00;
+    color: #2AFF00;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25pt;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    margin-left: 75px;
+  } 
+}
+
+button {
+  background-color: #ED0E7D;
+  border-radius: 10%;
+  border-color: #2AFF00;
+  color: #2AFF00;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25pt;
+  font-family: 'VT323', monospace;
+  display: inline-block;
+  margin-left: 75px;
 }
 
 /* Portrait */
