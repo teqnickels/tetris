@@ -15,7 +15,7 @@ $(function() {
 
 	canvas.width = width * tilesz;
 	canvas.height = height * tilesz; 
-	
+
 	var board = [];
 	for (var r = 0; r < height; r++) {
 		board[r] = [];

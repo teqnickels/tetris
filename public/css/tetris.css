@@ -25,7 +25,6 @@ body {
   background: #000;
   position: relative;
   z-index: 999;
-  width: 50%; 
 }
 
 .center {
@@ -93,7 +92,7 @@ button {
   font-size: 20px;
   font-family: 'VT323', monospace;
   display: inline-block;
-  margin-left: 75px;
+  /* margin-left: 75px; */
 }
 
 
@@ -175,21 +174,14 @@ a:visited {
 .small {
   display: none; 
 }
-/* ----------- iPad Pro 10.5" ----------- */
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-device-width: 834px) 
-  and (max-device-width: 1112px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-    .myVideo {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      /* min-width: 100vh;
-      min-height: 100vh; */
-    }
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
 
     .board {
       /* margin: 0; */
@@ -239,69 +231,503 @@ a:visited {
     display: inline-block;
     margin-left: 75px;
   } 
-}
 
-button {
-  background-color: #ED0E7D;
-  border-radius: 10%;
-  border-color: #2AFF00;
-  color: #2AFF00;
-  padding: 15px 32px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 25pt;
-  font-family: 'VT323', monospace;
-  display: inline-block;
-  margin-left: 75px;
+  button {
+    background-color: #ED0E7D;
+    border-radius: 10%;
+    border-color: #2AFF00;
+    color: #2AFF00;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25pt;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    margin-left: 75px;
+  }
+
 }
 
 /* Portrait */
-/* Declare the same value for min- and max-width to avoid colliding with desktops */
-/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .board {
+      border: 2px solid black;
+      border-bottom: 5px solid #ED0E7D;
+      position: relative;
+      z-index: 999;
+      width: 75%;
+    }
+
+   .flex-item {
+     display: flex;
+     width: 20%;
+     flex-direction: column;
+     background-color: #000;
+     opacity: 0.8;
+     align-items: center;
+   }
+
+   .tetron-next-piece {
+      background-color: #272428;
+      width: 80%;
+   }
+
+  .lines,
+  .levels {
+    color: #FFF;
+    font-size: 40pt;
+    color: #2AFF00;
+    font-family: 'VT323', monospace;
+    text-align: center;
+  }
+
+  .start,
+  .pause {
+    background-color: #ED0E7D;
+    border-radius: 10%;
+    border-color: #2AFF00;
+    color: #2AFF00;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25pt;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    margin-left: 75px;
+  } 
+
+  button {
+    background-color: #ED0E7D;
+    border-radius: 10%;
+    border-color: #2AFF00;
+    color: #2AFF00;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25pt;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    margin-left: 75px;
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .board {
+      border: 2px solid black;
+      border-bottom: 5px solid #ED0E7D;
+      position: relative;
+      z-index: 999;
+      width: 50%;
+    }
+
+   .flex-item {
+     display: flex;
+     width: 20%;
+     flex-direction: column;
+     background-color: #000;
+     opacity: 0.8;
+     align-items: center;
+   }
+
+   .tetron-next-piece {
+      background-color: #272428;
+      width: 80%;
+   }
+
+  .lines,
+  .levels {
+    color: #FFF;
+    font-size: 40pt;
+    color: #2AFF00;
+    font-family: 'VT323', monospace;
+    text-align: center;
+  }
+
+  .start,
+  .pause {
+    background-color: #ED0E7D;
+    border-radius: 10%;
+    border-color: #2AFF00;
+    color: #2AFF00;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25pt;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    margin-left: 75px;
+  } 
+
+  button {
+    background-color: #ED0E7D;
+    border-radius: 10%;
+    border-color: #2AFF00;
+    color: #2AFF00;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25pt;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    margin-left: 75px;
+  }
+
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .board {
+      /* margin: 0; */
+      /* display: block; */
+      border: 2px solid black;
+      border-bottom: 5px solid #ED0E7D;
+      /* background: #FFF; */
+      position: relative;
+      z-index: 999;
+      width: 80%;
+    }
+
+    .flex-item {
+      display: flex;
+      width: 20%;
+      flex-direction: column;
+      background-color: #000;
+      opacity: 0.8;
+      align-items: center;
+    }
+
+    .tetron-next-piece {
+      background-color: #272428;
+      width: 80%;
+    }
+
+  .lines,
+  .levels {
+    color: #FFF;
+    font-size: 40pt;
+    color: #2AFF00;
+    font-family: 'VT323', monospace;
+    text-align: center;
+  }
+
+  .start,
+  .pause {
+    background-color: #ED0E7D;
+    border-radius: 10%;
+    border-color: #2AFF00;
+    color: #2AFF00;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25pt;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    margin-left: 75px;
+  } 
+
+  button {
+    background-color: #ED0E7D;
+    border-radius: 10%;
+    border-color: #2AFF00;
+    color: #2AFF00;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25pt;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    margin-left: 75px;
+  }
+
+/* Portrait */
 @media only screen 
   and (min-device-width: 834px) 
   and (max-device-width: 834px) 
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 2) {
+    .board {
+      border: 2px solid black;
+      border-bottom: 5px solid #ED0E7D;
+      position: relative;
+      z-index: 999;
+      width: 100%;
+    }
 
+    .flex-item {
+      display: flex;
+      width: 20%;
+      flex-direction: column;
+      background-color: #000;
+      opacity: 0.8;
+      align-items: center;
+    }
+
+    .tetron-next-piece {
+      background-color: #272428;
+      width: 80%;
+    }
+
+    .lines,
+    .levels {
+      color: #FFF;
+      font-size: 40pt;
+      color: #2AFF00;
+      font-family: 'VT323', monospace;
+      text-align: center;
+    }
+
+    .start,
+    .pause {
+      background-color: #ED0E7D;
+      border-radius: 10%;
+      border-color: #2AFF00;
+      color: #2AFF00;
+      padding: 15px 32px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 25pt;
+      font-family: 'VT323', monospace;
+      display: inline-block;
+      margin-left: 75px;
+    }
+
+    button {
+      background-color: #ED0E7D;
+      border-radius: 10%;
+      border-color: #2AFF00;
+      color: #2AFF00;
+      padding: 15px 32px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 25pt;
+      font-family: 'VT323', monospace;
+      display: inline-block;
+      margin-left: 75px;
+    }
 }
 
 /* Landscape */
-/* Declare the same value for min- and max-width to avoid colliding with desktops */
-/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
 @media only screen 
   and (min-device-width: 1112px) 
   and (max-device-width: 1112px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 2) {
+    html {
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      width: 100vh;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
 
-}
+    .board {
+      border: 2px solid black;
+      border-bottom: 5px solid #ED0E7D;
+      position: relative;
+      z-index: 999;
+      width: 100%;
+    }
 
+    .flex-item {
+      display: flex;
+      width: 20%;
+      flex-direction: column;
+      background-color: #000;
+      opacity: 0.8;
+      align-items: center;
+    }
 
-/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+    .tetron-next-piece {
+      background-color: #272428;
+      width: 80%;
+    }
+
+    .lines,
+    .levels {
+      color: #FFF;
+      font-size: 40pt;
+      color: #2AFF00;
+      font-family: 'VT323', monospace;
+      text-align: center;
+    }
+
+    .start,
+    .pause {
+      background-color: #ED0E7D;
+      border-radius: 10%;
+      border-color: #2AFF00;
+      color: #2AFF00;
+      padding: 15px 32px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 25pt;
+      font-family: 'VT323', monospace;
+      display: inline-block;
+      margin-left: 75px;
+    }
+
+    button {
+      background-color: #ED0E7D;
+      border-radius: 10%;
+      border-color: #2AFF00;
+      color: #2AFF00;
+      padding: 15px 32px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 25pt;
+      font-family: 'VT323', monospace;
+      display: inline-block;
+      /* margin-left: 75px; */
+    }
+  }
+}  
+
+/* ----------- iPhone 4 and 4S ----------- */
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 
+  img {
+    width: 50%; 
+    height: 50%;
+  }
+
+  .board {
+    border: 2px solid black;
+    border-bottom: 5px solid #ED0E7D;
+    position: relative;
+    z-index: 999;
+    width: 60%;
+    height: 55vh;
+    margin-top: -150px;
+
+  }
+  
+  .flex-item {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    background-color: #000;
+    opacity: 0.8;
+    align-items: center;
+  }
+
+  .tetron-next-piece {
+    background-color: #272428;
+    width: 80%;
+  }
+
+  .lines,
+  .levels {
+    color: #FFF;
+    font-size: 15pt;
+    color: #2AFF00;
+    font-family: 'VT323', monospace;
+    text-align: center;
+  }
+
+  .start,
+  .pause {
+    background-color: #ED0E7D;
+    border-radius: 10%;
+    border-color: #2AFF00;
+    color: #2AFF00;
+    padding: 10px 22px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    font-size: 10pt; 
+    /* margin-left: 75px; */
+  }
+
+  .paused {
+    margin: auto;
+    font-family: 'VT323', monospace;
+    font-size: 48pt;
+    color: #2AFF00;
+  }
+
+  p {
+    font-size: 3pt; 
+  }
+  /* The Modal (background) */
+
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    z-index: 1000;
+    margin-top: -70px;  
 }
 
 /* Portrait */
 @media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    html {
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      width: 100vh;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
 }
 
-/* Landscape */
+
+/* Landscape
 @media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
 
-}
+} */
