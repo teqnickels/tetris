@@ -190,6 +190,10 @@ and (-webkit-min-device-pixel-ratio: 1) {
   .small {
     display: none; 
   }
+
+  .mobile-only {
+    display: none;
+  }
 }
 
 /* ----------- iPad 1, 2, Mini and Air ----------- */
@@ -330,9 +334,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: inline-block;
     margin-left: 75px;
   }
-  .mobile-only{ 
-    display: none; 
-  }
+
 }
 
 /* Landscape */
