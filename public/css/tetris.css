@@ -1,6 +1,4 @@
-@media only screen 
-and (min-device-width: 768px) 
-and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
   body {
     /* background-image: url("../images/neon-background.jpg"); */
     /* background-color: #000; */
@@ -10,7 +8,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     -o-background-size: cover;
     background-size: cover;
   }
-
   .myVideo {
     position: fixed;
     right: 0;
@@ -18,7 +15,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     min-width: 100%;
     min-height: 100%;
   }
-
   .board {
     /* margin: 0; */
     /* display: block; */
@@ -28,35 +24,42 @@ and (-webkit-min-device-pixel-ratio: 1) {
     position: relative;
     z-index: 999;
   }
-
   .center {
-    display: flex; 
-    width: 50%; 
-    margin: 0 auto; 
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
   }
-
   .lines,
   .levels {
     color: #FFF;
     font-size: 50px;
     color: #2AFF00;
     font-family: 'VT323', monospace;
-    text-align: center; 
+    text-align: center;
   }
 
-  .tetron-next-piece {
+  /* .tetron-next-piece {
     background-color: #272428;
-  }
+    padding: 50px;
+  } */
+
+.tetron-next-piece {
+  margin-top: 70px;
+  margin: 30px;
+  background-color: #272428;
+  padding: 50px;
+  width: 200px;
+  height: 200px;
+}
 
   .flex-item {
     display: flex;
-    width:30%;
+    width: 30%;
     flex-direction: column;
     background-color: #000;
     opacity: 0.8;
     align-items: center;
   }
-
   .flex-item-right {
     display: flex;
     width: 30%;
@@ -65,12 +68,10 @@ and (-webkit-min-device-pixel-ratio: 1) {
     opacity: 0.8;
     align-items: center;
   }
-  
   .flex-row {
     display: flex;
     margin: 15px;
   }
-
   .flex-item-center {
     /* width: 2400px; */
     flex-grow: 3;
@@ -80,23 +81,19 @@ and (-webkit-min-device-pixel-ratio: 1) {
     flex-direction: column;
     opacity: 0.8;
   }
-
   .flex-container {
     display: -webkit-flex;
     display: flex;
     width: 100%;
     height: 97vh;
     justify-content: center;
-
   }
-
   img {
     /*margin: auto;*/
     padding: 10px;
-    max-width:300;
-    max-height:300px;
+    max-width: 300;
+    max-height: 300px;
   }
-
   button {
     background-color: #ED0E7D;
     border-radius: 10%;
@@ -110,8 +107,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: inline-block;
     /* margin-left: 75px; */
   }
-
-
   /* The Modal (background) */
   .modal {
     display: none;
@@ -134,12 +129,9 @@ and (-webkit-min-device-pixel-ratio: 1) {
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
-      z-index: 1000;
-
+    z-index: 1000;
   }
-
   /* Modal Content */
-
   .modal-content {
     /* background-color: #fefefe66; */
     margin: auto;
@@ -147,50 +139,41 @@ and (-webkit-min-device-pixel-ratio: 1) {
     /* border: 1px solid #888; */
     width: 30%;
   }
-
   /* The Close Button */
-
   .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
-
   .close:hover,
   .close:focus {
     color: #2AFF00;
     text-decoration: none;
     cursor: pointer;
   }
-
   .paused {
     margin: auto;
     font-family: 'VT323', monospace;
     font-size: 155px;
     color: #2AFF00;
   }
-
   .credits {
     color: #ED0E7D;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
     text-align: center;
-    z-index: 1000; 
+    z-index: 1000;
   }
-
   a:link {
     color: #2AFF00;
   }
-
   a:hover,
   a:visited {
     color: #ED0E7D;
   }
-
   .small {
-    display: none; 
+    display: none;
   }
-
   .mobile-only {
     display: none;
   }
@@ -199,36 +182,30 @@ and (-webkit-min-device-pixel-ratio: 1) {
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
 
-    .board {
-      /* margin: 0; */
-      /* display: block; */
-      border: 2px solid black;
-      border-bottom: 5px solid #ED0E7D;
-      /* background: #FFF; */
-      position: relative;
-      z-index: 999;
-      width: 75%;
-    }
-
-   .flex-item {
-     display: flex;
-     width: 20%;
-     flex-direction: column;
-     background-color: #000;
-     opacity: 0.8;
-     align-items: center;
-   }
-
-   .tetron-next-piece {
-      background-color: #272428;
-      width: 80%;
-   }
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .board {
+    /* margin: 0; */
+    /* display: block; */
+    border: 2px solid black;
+    border-bottom: 5px solid #ED0E7D;
+    /* background: #FFF; */
+    position: relative;
+    z-index: 999;
+    width: 75%;
+  }
+  .flex-item {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    background-color: #000;
+    opacity: 0.8;
+    align-items: center;
+  }
+  .tetron-next-piece {
+    background-color: #272428;
+    width: 80%;
+  }
   .lines,
   .levels {
     color: #FFF;
@@ -237,7 +214,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: 'VT323', monospace;
     text-align: center;
   }
-
   .start,
   .pause {
     background-color: #ED0E7D;
@@ -251,8 +227,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: 'VT323', monospace;
     display: inline-block;
     margin-left: 75px;
-  } 
-
+  }
   button {
     background-color: #ED0E7D;
     border-radius: 10%;
@@ -266,37 +241,30 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: inline-block;
     margin-left: 75px;
   }
-
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-    .board {
-      border: 2px solid black;
-      border-bottom: 5px solid #ED0E7D;
-      /* position: relative; */
-      z-index: 999;
-      width: 75%;
-    }
 
-   .flex-item {
-     /* display: flex; */
-     width: 20%;
-     flex-direction: column;
-     background-color: #000;
-     opacity: 0.8;
-     align-items: center;
-   }
-
-   .tetron-next-piece {
-      background-color: #272428;
-      width: 80%;
-   }
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .board {
+    border: 2px solid black;
+    border-bottom: 5px solid #ED0E7D;
+    /* position: relative; */
+    z-index: 999;
+    width: 75%;
+  }
+  .flex-item {
+    /* display: flex; */
+    width: 20%;
+    flex-direction: column;
+    background-color: #000;
+    opacity: 0.8;
+    align-items: center;
+  }
+  .tetron-next-piece {
+    background-color: #272428;
+    width: 80%;
+  }
   .lines,
   .levels {
     color: #FFF;
@@ -305,7 +273,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: 'VT323', monospace;
     text-align: center;
   }
-
   .start,
   .pause {
     background-color: #ED0E7D;
@@ -319,8 +286,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: 'VT323', monospace;
     display: inline-block;
     margin-left: 75px;
-  } 
-
+  }
   button {
     background-color: #ED0E7D;
     border-radius: 10%;
@@ -334,37 +300,30 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: inline-block;
     margin-left: 75px;
   }
-
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-    .board {
-      border: 2px solid black;
-      border-bottom: 5px solid #ED0E7D;
-      position: relative;
-      z-index: 999;
-      width: 50%;
-    }
 
-   .flex-item {
-     display: flex;
-     width: 20%;
-     flex-direction: column;
-     background-color: #000;
-     opacity: 0.8;
-     align-items: center;
-   }
-
-   .tetron-next-piece {
-      background-color: #272428;
-      width: 80%;
-   }
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .board {
+    border: 2px solid black;
+    border-bottom: 5px solid #ED0E7D;
+    position: relative;
+    z-index: 999;
+    width: 50%;
+  }
+  .flex-item {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    background-color: #000;
+    opacity: 0.8;
+    align-items: center;
+  }
+  .tetron-next-piece {
+    background-color: #272428;
+    width: 80%;
+  }
   .lines,
   .levels {
     color: #FFF;
@@ -373,7 +332,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: 'VT323', monospace;
     text-align: center;
   }
-
   .start,
   .pause {
     background-color: #ED0E7D;
@@ -387,8 +345,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: 'VT323', monospace;
     display: inline-block;
     margin-left: 75px;
-  } 
-
+  }
   button {
     background-color: #ED0E7D;
     border-radius: 10%;
@@ -402,40 +359,35 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: inline-block;
     margin-left: 75px;
   }
-
 }
 
 /* ----------- iPad Pro 10.5" ----------- */
+
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 834px) 
-  and (max-device-width: 1112px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .board {
-      /* margin: 0; */
-      /* display: block; */
-      border: 2px solid black;
-      border-bottom: 5px solid #ED0E7D;
-      /* background: #FFF; */
-      position: relative;
-      z-index: 999;
-      width: 80%;
-    }
 
-    .flex-item {
-      display: flex;
-      width: 20%;
-      flex-direction: column;
-      background-color: #000;
-      opacity: 0.8;
-      align-items: center;
-    }
-
-    .tetron-next-piece {
-      background-color: #272428;
-      width: 80%;
-    }
-
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  .board {
+    /* margin: 0; */
+    /* display: block; */
+    border: 2px solid black;
+    border-bottom: 5px solid #ED0E7D;
+    /* background: #FFF; */
+    position: relative;
+    z-index: 999;
+    width: 80%;
+  }
+  .flex-item {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    background-color: #000;
+    opacity: 0.8;
+    align-items: center;
+  }
+  .tetron-next-piece {
+    background-color: #272428;
+    width: 80%;
+  }
   .lines,
   .levels {
     color: #FFF;
@@ -444,7 +396,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: 'VT323', monospace;
     text-align: center;
   }
-
   .start,
   .pause {
     background-color: #ED0E7D;
@@ -458,8 +409,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: 'VT323', monospace;
     display: inline-block;
     margin-left: 75px;
-  } 
-
+  }
   button {
     background-color: #ED0E7D;
     border-radius: 10%;
@@ -473,13 +423,8 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: inline-block;
     margin-left: 75px;
   }
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 834px) 
-  and (max-device-width: 834px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 2) {
+  /* Portrait */
+  @media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
     .board {
       border: 2px solid black;
       border-bottom: 5px solid #ED0E7D;
@@ -487,7 +432,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
       z-index: 999;
       width: 100%;
     }
-
     .flex-item {
       display: flex;
       width: 20%;
@@ -496,12 +440,10 @@ and (-webkit-min-device-pixel-ratio: 1) {
       opacity: 0.8;
       align-items: center;
     }
-
     .tetron-next-piece {
       background-color: #272428;
       width: 80%;
     }
-
     .lines,
     .levels {
       color: #FFF;
@@ -510,7 +452,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
       font-family: 'VT323', monospace;
       text-align: center;
     }
-
     .start,
     .pause {
       background-color: #ED0E7D;
@@ -525,7 +466,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
       display: inline-block;
       margin-left: 75px;
     }
-
     button {
       background-color: #ED0E7D;
       border-radius: 10%;
@@ -539,18 +479,12 @@ and (-webkit-min-device-pixel-ratio: 1) {
       display: inline-block;
       margin-left: 75px;
     }
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 1112px) 
-  and (max-device-width: 1112px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 2) {
+  }
+  /* Landscape */
+  @media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
     .mobile-only {
-      display: block; 
+      display: block;
     }
-
     .board {
       border: 2px solid black;
       border-bottom: 5px solid #ED0E7D;
@@ -558,7 +492,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
       z-index: 999;
       width: 100%;
     }
-
     .flex-item {
       display: flex;
       width: 20%;
@@ -567,12 +500,10 @@ and (-webkit-min-device-pixel-ratio: 1) {
       opacity: 0.8;
       align-items: center;
     }
-
     .tetron-next-piece {
       background-color: #272428;
       width: 80%;
     }
-
     .lines,
     .levels {
       color: #FFF;
@@ -581,7 +512,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
       font-family: 'VT323', monospace;
       text-align: center;
     }
-
     .start,
     .pause {
       background-color: #ED0E7D;
@@ -596,7 +526,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
       display: inline-block;
       margin-left: 75px;
     }
-
     button {
       background-color: #ED0E7D;
       border-radius: 10%;
@@ -611,16 +540,13 @@ and (-webkit-min-device-pixel-ratio: 1) {
       /* margin-left: 75px; */
     }
   }
-}  
+}
 
 /* ----------- iPhone 4 and 4S ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .myVideo {
     position: fixed;
     right: 0;
@@ -628,7 +554,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     min-width: 100%;
     min-height: 100%;
   }
-
   .board {
     /* margin: 0; */
     /* display: block; */
@@ -638,21 +563,18 @@ and (-webkit-min-device-pixel-ratio: 1) {
     /* position: relative; */
     width: 180%;
     z-index: 999;
-    margin-left: 30px; 
+    margin-left: 30px;
   }
-
-  .tetron-next-piece {
-    width: 150%; 
-    padding-top: 60px; 
-    padding-right: 60px; 
-  }
-
+  /* .tetron-next-piece {
+    width: 150%;
+    padding-top: 60px;
+    padding-right: 60px;
+  } */
   .center {
     display: flex;
     width: 50%;
     margin: 0 auto;
   }
-
   .lines,
   .levels {
     color: #FFF;
@@ -661,11 +583,9 @@ and (-webkit-min-device-pixel-ratio: 1) {
     font-family: 'VT323', monospace;
     text-align: center;
   }
-
   .tetron-next-piece {
     background-color: #272428;
   }
-
   .flex-item {
     width: 50%;
     flex-direction: column;
@@ -673,14 +593,11 @@ and (-webkit-min-device-pixel-ratio: 1) {
     opacity: 0.8;
     align-items: center;
     margin-right: 70px;
-    
   }
-
   .flex-row {
     display: flex;
     margin: 15px;
   }
-
   .flex-item-center {
     /* width: 2400px; */
     flex-grow: 1;
@@ -691,7 +608,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     opacity: 0.8;
     width: 45vw;
   }
-
   .flex-container {
     display: -webkit-flex;
     display: flex;
@@ -699,14 +615,12 @@ and (-webkit-min-device-pixel-ratio: 1) {
     height: 97vh;
     justify-content: center;
   }
-
   img {
     /*margin: auto;*/
     padding: 10px;
     max-width: 300;
     max-height: 300px;
   }
-
   button {
     background-color: #ED0E7D;
     border-radius: 10%;
@@ -720,9 +634,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: inline-block;
     /* margin-left: 75px; */
   }
-
   /* The Modal (background) */
-
   .modal {
     display: none;
     /* Hidden by default */
@@ -746,9 +658,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     /* Black w/ opacity */
     z-index: 1000;
   }
-
   /* Modal Content */
-
   .modal-content {
     /* background-color: #fefefe66; */
     margin: auto;
@@ -756,30 +666,25 @@ and (-webkit-min-device-pixel-ratio: 1) {
     /* border: 1px solid #888; */
     width: 30%;
   }
-
   /* The Close Button */
-
   .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
-
   .close:hover,
   .close:focus {
     color: #2AFF00;
     text-decoration: none;
     cursor: pointer;
   }
-
   .paused {
     margin: auto;
     font-family: 'VT323', monospace;
     font-size: 155px;
     color: #2AFF00;
   }
-
   .credits {
     color: #ED0E7D;
     margin-bottom: 0px;
@@ -789,17 +694,12 @@ and (-webkit-min-device-pixel-ratio: 1) {
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .mobile-only {
     display: block;
   }
 }
-
 
 /* Landscape
 @media only screen 
@@ -807,5 +707,4 @@ and (-webkit-min-device-pixel-ratio: 1) {
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-
 } */
