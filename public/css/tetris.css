@@ -1,7 +1,5 @@
 @media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
   body {
-    /* background-image: url("../images/neon-background.jpg"); */
-    /* background-color: #000; */
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -16,8 +14,6 @@
     min-height: 100%;
   }
   .board {
-    /* margin: 0; */
-    /* display: block; */
     border: 2px solid black;
     border-bottom: 5px solid #ED0E7D;
     background: #000;
@@ -37,11 +33,6 @@
     font-family: 'VT323', monospace;
     text-align: center;
   }
-
-  /* .tetron-next-piece {
-    background-color: #272428;
-    padding: 50px;
-  } */
 
 .tetron-next-piece {
   margin-top: 70px;
@@ -73,7 +64,6 @@
     margin: 15px;
   }
   .flex-item-center {
-    /* width: 2400px; */
     flex-grow: 3;
     display: flex;
     align-items: center;
@@ -89,7 +79,6 @@
     justify-content: center;
   }
   img {
-    /*margin: auto;*/
     padding: 10px;
     max-width: 300;
     max-height: 300px;
