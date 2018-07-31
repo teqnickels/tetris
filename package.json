@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A collection of games to play in a web browser.",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
