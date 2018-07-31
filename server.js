@@ -11,4 +11,3 @@ app.get('*', (req, res) => {
 
 app.listen(port);
 console.log('server started');
-// http-server ./public -p 4321
