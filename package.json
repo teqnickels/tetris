@@ -1,24 +1,21 @@
-{"name": "browser-games",
+{
+  "name": "browser-games",
   "version": "0.0.0",
   "description": "A collection of games to play in a web browser.",
-  "scripts": 
-  {
-    "start": "node server.js"
+  "scripts": {
+    "start": "nodemon server.js"
   },
-  "repository": 
-  {
+  "repository": {
     "type": "git"
   },
-  "keywords": 
-  [
+  "keywords": [
     "games",
     "browser"
   ],
   "author": "debrena mcewen",
   "license": "MIT",
   "homepage": "https://github.com/teqnickels/tetris",
-  "dependencies": 
-  {
+  "dependencies": {
     "express": "^4.16.3",
     "http-server": "^0.9.0"
   }

@@ -7,7 +7,7 @@ $(function () {
 	var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
 	var width = 12;
 	var height = 28;
-	var tilesz = 20;
+	var tilesz = 32;
 	var playerLevel = 0;
 
 	var vid = document.getElementsByClassName("myVideo")[0];
