@@ -196,7 +196,8 @@
     width: 80%;
   }
   .lines,
-  .levels {
+  .levels, 
+  .points {
     color: #FFF;
     font-size: 40pt;
     color: #2AFF00;
