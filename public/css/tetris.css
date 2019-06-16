@@ -1,4 +1,4 @@
-@media only screen and (min-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   body {
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -171,7 +171,6 @@
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 
 /* Portrait and Landscape */
-
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   .board {
     /* margin: 0; */
@@ -475,6 +474,7 @@
     .mobile-only {
       display: block;
     }
+
     .board {
       border: 2px solid black;
       border-bottom: 5px solid #ED0E7D;
