@@ -173,7 +173,9 @@ $(function () {
 				board[this.y + iy][this.x + ix] = this.color;
 			}
 		}
-		var nlines = 0;
+	
+//this will determine if the user has cleared a line and get the number of lines the user cleared//
+		var nlines = 0; 
 		for (var y = 0; y < height; y++) {
 			var line = true;
 			for (var x = 0; x < width; x++) {
@@ -193,15 +195,20 @@ $(function () {
 			}
 		}
 
-		let previousLines = linePoints.textContent
+
+		let previousLines = linePoints.textContent // get the previous line count 
+		console.log("THIS IS THE PREVIOUS LINES", previousLines)
 		let currentLines;
 		var countUntilLevelUp = 5;
 		if (nlines > 0) {
-			previousLines = lines;
+			previousLines = lines;// changes the line count in the front end
 			lines += nlines;
 			level.textContent = "Level: " + getLevel(lines)
+			console.log("MADE IT TO LINE 207")
 			drawBoard();
+			console.log("MADE IT TO LINE 208")
 			linecount.textContent = "Lines: " + lines;
+			console.log("This is LINE COUNT", linecount.textContent)
 		}
 
 	};
@@ -353,4 +360,4 @@ $(function () {
 		modal.style.display = "none";
 	}
 
-});
+});	
